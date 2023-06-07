@@ -94,8 +94,7 @@ RegisterNumber:21222223103
       and(y6,a0bar,a1,a2);
       and(y7,a0,a1,a2);
       endmodule
-      ```
-
+```
 
 
 
