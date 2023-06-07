@@ -62,10 +62,39 @@ D7 = X Y Z
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: DHARSHAN V
+RegisterNumber:21222223103
 */
 
+## ENCODE:
+```
+      module enc(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+      input y0,y1,y2,y3,y4,y5,y6,y7;
+      output a0,a1,a2;
+      or(a0,y7,y5,y3,y1);
+      or(a1,y7,y6,y3,y2);
+      or(a2,y7,y6,y5,y4);
+      endmodule
+```
+## DECODE:
+```
+      module dec (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+      input a0,a1,a2;
+      output y0,y1,y2,y3,y4,y5,y6,y7;
+      wire a0bar,a1bar,a2bar;
+      not(a0bar,a0);
+      not(a1bar,a1);
+      not(a2bar,a2);
+      and(y0,a0bar,a1bar,a2bar);
+      and(y1,a0,a1bar,a2bar);
+      and(y2,a0bar,a1,a2bar);
+      and(y3,a0,a1,a2bar);
+      and(y4,a0bar,a1bar,a2);
+      and(y5,a0,a1bar,a2);
+      and(y6,a0bar,a1,a2);
+      and(y7,a0,a1,a2);
+      endmodule
+      ```
 
 
 
@@ -74,7 +103,9 @@ RegisterNumber:
 ### RTL LOGIC  
 
 
+![Screenshot 2023-06-07 152711](https://github.com/Dharshan011/Experiment-08-Encoders-and-decoders-/assets/113497491/cd8454dc-73a1-44d3-8260-392b836420f3)
 
+![Screenshot 2023-06-07 152719](https://github.com/Dharshan011/Experiment-08-Encoders-and-decoders-/assets/113497491/b3ec6078-1078-4174-8739-056768138e22)
 
 
 
@@ -82,15 +113,21 @@ RegisterNumber:
 
 ### TIMING DIGRAMS  
 
+![Screenshot 2023-06-07 152729](https://github.com/Dharshan011/Experiment-08-Encoders-and-decoders-/assets/113497491/e97ed875-b53f-42ee-b42c-d626de2e54fd)
 
+![Screenshot 2023-06-07 152738](https://github.com/Dharshan011/Experiment-08-Encoders-and-decoders-/assets/113497491/cf930f8f-c8b4-4643-9de2-aa1fb45cd7c4)
 
 
 
 ### TRUTH TABLE 
 
+![Screenshot 2023-06-07 152745](https://github.com/Dharshan011/Experiment-08-Encoders-and-decoders-/assets/113497491/370a8524-30d3-489b-bc10-65b877f2cf16)
 
 
+![Screenshot 2023-06-07 152753](https://github.com/Dharshan011/Experiment-08-Encoders-and-decoders-/assets/113497491/7befcf46-700d-4077-acc1-9b012ced4c23)
 
 
 
 ### RESULTS 
+
+Thus the program to design encoder and decoder is successfully completed.
